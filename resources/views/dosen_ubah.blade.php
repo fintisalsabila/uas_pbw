@@ -13,7 +13,7 @@
             <input type="text" class="form-control" id="nama" name="nama" value="{{ $dosen->nama }}" placeholder="Isi nama"/>
         </div>
         <div class="form-group">
-            <label for="berat_badan">Berat Badan:</label>
+            <label for="berat_badan">Berat Badan (Kg):</label>
             <input type="number" class="form-control" id="berat_badan" name="berat_badan" value="{{ $dosen->berat_badan }}" placeholder="Isi berat badan"/>
         </div>
         <div class="form-group">
