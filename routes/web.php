@@ -35,11 +35,20 @@ Route::patch('/mtk/{id}', [MatakuliahController::class,'ubah']);
 Route::delete('/mtk/{id}', [MatakuliahController::class,'hapus']);
 
 // Grouping dosen Routes
-Route::get('/dosen/tambah', [DosenController::class,'formTambah']);
-Route::get('/dosen/ubah/{id}', [DosenController::class,'formUbah']);
-Route::get('/dosen/hapus/{id}', [DosenController::class,'formHapus']);
 Route::get('/dosen', [DosenController::class,'tampilSemua']);
 Route::get('/dosen/{id}', [DosenController::class,'tampil']);
-Route::post('/dosen', [DosenController::class,'tambah']);
-Route::patch('/dosen/{id}', [DosenController::class, 'ubah']);
-Route::delete('/dosen/{id}', [DosenController::class,'hapus']);
+
+Route::middleware('is_manajer')->group(function () {
+    Route::get('/dosen/tambah', [DosenController::class, 'formTambah']);
+    Route::get('/dosen/ubah/{id}', [DosenController::class, 'formUbah']);
+    Route::get('/dosen/hapus/{id}', [DosenController::class, 'formHapus']);
+    Route::post('/dosen', [DosenController::class, 'tambah']);
+    Route::put('/dosen/{id}', [DosenController::class, 'ubah']);
+    Route::delete('/dosen/{id}', [DosenController::class, 'hapus']);
+});
+
+Route::middleware('is_staf')->group(function () {
+    Route::get('/dosen/ubah/{id}', [DosenController::class, 'formUbah']);
+    Route::put('/dosen/{id}', [DosenController::class, 'ubah']);
+});
+
