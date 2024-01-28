@@ -52,3 +52,13 @@ Route::middleware('is_staf')->group(function () {
     Route::put('/dosen/{id}', [DosenController::class, 'ubah']);
 });
 
+/* List Nama Kelompok
+paling berkontribusi-kurang atau tidak kontribusi
+
+1321046 - Finti Sasa Sabila             (mengerjakan)
+1321045 - Naufaldi Ramadhan             (mengerjakan)
+1321054 - Novrylianto Zundi Ramadhan    (kurang)
+1321052 - Aldi Ramadhani                (tidak mengerjakan)
+
+File lengkap pada github https://github.com/fintisalsabila/uas_pbw
+*/

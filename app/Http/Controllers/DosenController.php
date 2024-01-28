@@ -72,10 +72,15 @@ class DosenController extends Controller
         $m = Dosen::find($id);
         return view("dosen_hapus", ['m' => $m]);
     }
-   // public function hapus($id) {
-     //   $m = Dosen::find($id);
-       // $m->delete();
-        // kembali ke tampil data mahasiswa
-       // return redirect("/dosen");
-    //}
 }
+
+/* List Nama Kelompok
+paling berkontribusi-kurang atau tidak kontribusi
+
+1321046 - Finti Sasa Sabila             (mengerjakan)
+1321045 - Naufaldi Ramadhan             (mengerjakan)
+1321054 - Novrylianto Zundi Ramadhan    (kurang)
+1321052 - Aldi Ramadhani                (tidak mengerjakan)
+
+File lengkap pada github https://github.com/fintisalsabila/uas_pbw
+*/
